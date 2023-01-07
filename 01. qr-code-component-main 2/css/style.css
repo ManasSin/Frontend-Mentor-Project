@@ -1,0 +1,75 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* variables for desgin */
+
+  /* ? colors */
+
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(212, 45%, 89%);
+  --grayish-blue: hsl(220, 15%, 55%);
+  --dark-blue: hsl(218, 44%, 22%);
+
+  /* ? font */
+
+  --bold-text: normal 700 22px "Outfit", Arial;
+  --light-text: normal 400 15px "Outfit", Arial;
+
+  /* ? screen size */
+
+  --mobile: 375px;
+  --desktop: 1440px;
+}
+
+/* ! already given styles */
+.attribution {
+  font-size: 10px;
+  text-align: center;
+  font-family: "Outfit";
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* ! My styles */
+
+body {
+  height: 100vh;
+
+  background-color: var(--light-gray);
+  display: grid;
+  place-items: center;
+
+  text-align: center;
+}
+
+.container {
+  margin: auto;
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: 20px;
+  width: 280px;
+}
+
+.QR-image {
+  width: inherit;
+  aspect-ratio: 1;
+  border-radius: 10px;
+}
+
+.text {
+  padding: 8px;
+}
+
+.text > h1 {
+  font: var(--bold-text);
+  color: var(--dark-blue);
+}
+
+.text > p {
+  font: var(--light-text);
+  color: var(--grayish-blue);
+}
