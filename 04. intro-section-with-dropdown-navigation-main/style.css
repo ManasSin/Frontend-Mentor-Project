@@ -1,0 +1,291 @@
+/* ! variable */
+
+:root {
+  /* * color variable */
+
+  --gray-500: hsla(0, 0%, 41%, 1);
+  --black-800: hsla(0, 0%, 8%, 1);
+  --white-900: hsla(0, 0%, 98%, 1);
+
+  /* * font-family */
+
+  --ff: "Epilogue", Helvetica;
+
+  /* * font varible */
+
+  --heading: normal 700 58px var(--ff);
+  --body: normal 500 15px var(--ff);
+
+  /* * spacing variable */
+
+  --space-xxs: 0.5rem;
+  --space-xs: 1rem;
+  --space-s: 1.5rem;
+  --space-med: 3rem;
+  --space-large: 5rem;
+}
+
+/* ! css reset */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* ! main css */
+
+body {
+  background-color: var(--white-900);
+  font: var(--body);
+}
+
+/* ? generic style */
+
+ul,
+li,
+a {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a > img {
+  display: inline-block;
+}
+
+button {
+  list-style-type: none;
+  border: none;
+  background-color: inherit;
+  color: inherit;
+  padding: var(--space-xs);
+  border-radius: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.btn-primary {
+  border: 1.5px solid var(--gray-500);
+}
+
+.btn-black {
+  background-color: var(--black-800);
+  color: var(--white-900);
+}
+
+/* ? layout */
+
+main {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+}
+
+main > * {
+  grid-column: 2;
+  min-width: 0;
+}
+
+main > nav {
+  grid-column: 1 / -1;
+
+  margin: var(--space-xs) var(--space-med);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-s);
+
+  color: var(--gray-500);
+}
+
+nav > ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-med);
+  flex: 1 1 auto;
+  padding-inline: var(--space-med);
+}
+
+.floating-list-features,
+.floating-list-company {
+  background-color: #fff;
+  padding: var(--space-s);
+  border-radius: 8px;
+  filter: drop-shadow(5px 5px 20px #4d4d4d35);
+
+  display: none;
+}
+
+.drop-up {
+  display: none;
+}
+
+.floating-list-features {
+  position: absolute;
+  top: 8%;
+  left: 9.5em;
+}
+
+.floating-list-company {
+  position: absolute;
+  top: 8%;
+  left: 23em;
+}
+
+.floating-list-features > ul > li > a {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-s);
+  /* should be using before element */
+}
+
+.floating-list-features > ul,
+.floating-list-company > ul {
+  display: flex;
+  flex-flow: column;
+  gap: var(--space-xxs);
+  padding-inline: var(--space-xxs);
+}
+
+.btn-group {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.menu-group {
+  display: none;
+}
+
+nav > ul > li:hover,
+nav button:hover {
+  color: var(--black-800);
+}
+
+/* ! hero section */
+
+section[aria-label="hero-section"] {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  /* gap: 0 var(--space-med); */
+  width: 100%;
+  padding: var(--space-med) var(--space-med) 0;
+}
+
+.left-side {
+  grid-column: 1 / 2;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.left-side > header {
+  margin: auto 0;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: var(--space-med);
+}
+
+.left-side > header > h1 {
+  font: var(--heading);
+}
+
+.left-side > header > p {
+  width: 70%;
+}
+
+.left-side > aside {
+  height: max-content;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-block: var(--space-xs);
+}
+
+.image-section > img[src*="mobile.png"] {
+  display: none;
+}
+
+.hero-section > section[aria-label="image-section"] {
+  grid-column: 2 / -1;
+  justify-self: end;
+  width: 70%;
+}
+/* 
+.image-section > img {
+  width: 100%;
+  height: 100%;
+} */

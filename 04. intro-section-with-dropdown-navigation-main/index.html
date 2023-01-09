@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  </head>
+  <body>
+    <!-- ! main  -->
+    <main>
+      <nav aria-label="Navigation-bar" role="navigation">
+        <div aria-label="logo">
+          <img
+            aria-label="Snap-logo"
+            src="./images/logo.svg"
+            alt="logo of this site"
+          />
+        </div>
+
+        <div class="floating-list-features">
+          <ul>
+            <li>
+              <a href="#">
+                <img src="./images/icon-todo.svg" alt="todo-list" />
+                <p>Todo list</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/icon-calendar.svg" alt="calendar" />
+                <p>Calendar</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/icon-reminders.svg" alt="reminder icon" />
+                <p>Reminder</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/icon-planning.svg" alt="planning icon" />
+                <p>planning</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="floating-list-company">
+          <ul>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+
+        <ul aria-label="nav-list" aria-hidden="false" role="menu">
+          <li role="link" class="nav-links">
+            <a href="#">
+              Features
+              <img
+                class="dropdowns"
+                src="./images/icon-arrow-down.svg"
+                alt=""
+              />
+              <img class="drop-up" src="./images/icon-arrow-up.svg" alt="" />
+            </a>
+          </li>
+          <li role="link" class="nav-links">
+            <a href="#">
+              Company
+              <img
+                class="dropdowns"
+                src="./images/icon-arrow-down.svg"
+                alt=""
+              />
+              <img class="drop-up" src="./images/icon-arrow-up.svg" alt="" />
+            </a>
+          </li>
+          <li role="link" class="nav-links"><a href="#">Carrers</a></li>
+          <li role="link" class="nav-links"><a href="#">About</a></li>
+        </ul>
+
+        <div class="menu-group">
+          <img
+            src="./images/icon-menu.svg"
+            alt="toggle menu bar"
+            class="menu-open"
+            role="menubar"
+            aria-hidden="true"
+          />
+          <img
+            src="./images/icon-close-menu.svg"
+            alt="close menu bar"
+            class="menu-close"
+            role="menubar"
+            aria-hidden="true"
+          />
+        </div>
+
+        <div aria-label="button-group" class="btn-group">
+          <button role="link" class="btn btn-ghost">Login</button>
+          <button role="link" class="btn btn-primary">Register</button>
+        </div>
+      </nav>
+
+      <!-- ! hero section -->
+
+      <section aria-label="hero-section" class="hero-section">
+        <!-- ? main section -->
+
+        <div class="left-side">
+          <header>
+            <h1>
+              Make <br />
+              remote work
+            </h1>
+            <p>
+              Get your team in sync, no matter your location. Streamline
+              processes, create team rituals, and watch productivity soar.
+            </p>
+            <button class="btn btn-black">Learn more</button>
+          </header>
+
+          <aside>
+            <img src="./images/client-databiz.svg" alt="databiz logo" /><img
+              src="./images/client-audiophile.svg"
+              alt="audio phole logo"
+            />
+            <img src="./images/client-meet.svg" alt="meet logo" /><img
+              src="./images/client-maker.svg"
+              alt="maker logo"
+            />
+          </aside>
+        </div>
+
+        <!-- ? image section -->
+
+        <section aria-label="image-section" class="image-section">
+          <img
+            src="./images/image-hero-desktop.png"
+            alt="an illustratative image of a man working remote."
+          />
+
+          <img
+            src="./images/image-hero-mobile.png"
+            alt="an illustratative image of a man working remote."
+          />
+        </section>
+      </section>
+    </main>
+    <link rel="stylesheet" defer href="script.js" />
+  </body>
+</html>
