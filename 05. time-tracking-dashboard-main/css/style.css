@@ -13,14 +13,28 @@
   --yellow-700: hsla(43, 83%, 65%, 1);
 
   --body-color: hsla(224, 46%, 9%, 1);
+  --white-body: #fff;
+  --white-fadded: #ffffff50;
 
   /* ? typography variable */
 
-  --ff: "Rubrik", monospace;
+  --ff: "Rubik", monospace;
 
   --f-desk-body: normal 400 15px var(--ff);
   --f-desk-semi-bold: normal 500 18px var(--ff);
   --f-desk-heading: normal 300 49px var(--ff);
+
+  /* ? space variable */
+
+  --space-900: 8rem;
+  --space-700: 4rem;
+  --space-500: 2rem;
+  --space-300: 1rem;
+  --space-100: 0.5rem;
+
+  /*  ? border -radius  */
+
+  --roundness-radius: 15px;
 }
 
 /* * css reset */
@@ -93,4 +107,145 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+
+/* * generic classes */
+
+.semi-bold--text {
+  color: var(--white-body);
+  font: var(--f-desk-semi-bold);
+}
+.title-heading-text {
+  color: var(--white-body);
+  font: var(--f-desk-heading);
+}
+.regular-text {
+  color: var(--white-fadded);
+  font: var(--f-desk-body);
+}
+
+/* * main layouts */
+
+body {
+  background-color: var(--body-color);
+
+  display: grid;
+  grid-template-columns: 80px 1fr 80px;
+  place-content: center;
+}
+
+body > * {
+  grid-column: 2;
+}
+
+section {
+  /* width: 80%;
+  height: 70%; */
+  margin: auto;
+  padding: var(--space-900) var(--space-500);
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  place-content: center;
+  gap: var(--space-500);
+}
+
+main {
+  grid-column: 2/ -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-auto-rows: minmax(220px, 1fr);
+  justify-content: space-between;
+  row-gap: var(--space-500);
+  column-gap: var(--space-300);
+}
+
+.cards {
+  background-color: var(--orange-700);
+  border-radius: var(--roundness-radius);
+  padding-top: var(--space-500);
+  position: relative;
+  overflow: hidden;
+
+  z-index: -10;
+}
+
+.cards > .background-opacity-low {
+  position: absolute;
+  right: 10px;
+  top: -10px;
+
+  z-index: -1;
+}
+
+.card-body {
+  background-color: var(--slate-purple-200);
+  border-radius: var(--roundness-radius) var(--roundness-radius) 0 0;
+  height: 100%;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+
+  padding-inline: calc(var(--space-300) + var(--space-100));
+  z-index: 1;
+}
+
+.card-body > .card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+aside {
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+  border-radius: var(--roundness-radius);
+
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+
+  background-color: var(--slate-purple-200);
+}
+
+aside > * {
+  padding-inline-start: var(--space-300);
+}
+
+aside > div {
+  padding-top: var(--space-300);
+  padding-right: var(--space-700);
+  background-color: var(--blue-600);
+  color: var(--white-body);
+  border-radius: var(--roundness-radius);
+  height: 70%;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+
+  gap: var(--space-500);
+}
+
+aside > div > img {
+  width: 4em;
+  outline: 2px solid var(--white-body);
+  border-radius: 50%;
+}
+
+aside > ul {
+  justify-self: flex-end;
+  flex: 1 1 auto;
+  list-style-type: none;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+li {
+  list-style-type: none;
+  color: inherit;
+  text-decoration: none;
 }
