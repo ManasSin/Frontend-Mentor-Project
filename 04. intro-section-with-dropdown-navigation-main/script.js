@@ -1,5 +1,7 @@
 "use strict";
 
+/*
+! fialed attampts
 // const drop = document.querySelectorAll(".drop-up")[0];
 // const drop1 = document.querySelectorAll(".drop-up")[1];
 // const dropdowns0 = document.querySelectorAll(".dropdowns")[0];
@@ -33,41 +35,36 @@ dropdowns[0].addEventListener("click", toggleClass);
 dropUp[0].addEventListener("click", toggleClass);
 dropdowns[1].addEventListener("click", toggleClass);
 dropUp[1].addEventListener("click", toggleClass);
+*/
 
-// else {
-//   dropdowns[0].classList.remove("hidden");
-//   dropUp[0].classList.add("hidden");
-//   floating.classList.add("hidden");
-// }
-// console.log(drop);
+// console.log(navbutton[1]);
+// const dropUp = document.querySelectorAll(".drop-up");
+// const dropDowns = document.querySelectorAll(".dropdowns");
 
-// const hideShow = () => {
-//   if (
-//     (floating.classList.contains("hidden") &&
-//       drop.classList.contains("hidden")) ||
-//     comp.classList.contains("hidden")
-//   ) {
-//     floating.classList.remove("hidden");
-//     drop.classList.remove("hidden");
-//     dropdowns.classList.add("hidden");
-//     comp.classList.remove("hidden");
-//   } else {
-//     floating.classList.add("hidden");
-//     comp.classList.add("hidden");
-//     drop.classList.add("hidden");
-//     dropdowns.classList.remove("hidden");
+// console.log(dropUp[1], dropDowns);
+// function toggleClas(itemHide) {
+//   for (let i = 0; i < itemHide.length; i++) {
+//     // add listner to each event
+//     itemHide[i].addEventListener("click", function () {
+//       //lets find menu to open based on 3rd class on the navbar
+//       itemHide.classlist.add("hidden");
+
+//       if (itemHide[i] === 0) {
+//         const floating = document.querySelector(".floating-list-feature");
+//         floating.classList.toggle("hidden");
+//       } else {
+//         const floating = document.querySelector(".floating-list-company");
+//         floating.classList.toggle("hidden");
+//       }
+//     });
 //   }
-// };
+// }
+const navbutton = document.getElementsByClassName("nav-links");
 
-// drop.addEventListener("click", hideShow);
-// dropdowns.addEventListener("click", hideShow);
-// drop1.addEventListener("click", hideShow);
-// dropdowns1.addEventListener("click", hideShow);
+for (const x of navbutton) {
+  x.addEventListener("click", function () {
+    const menuToOpen = document.querySelector(`#${x.classList[1]}`);
 
-// dropdowns.onclick()
-
-// for (let i = 0; i < dropdowns.length; i++)
-//   dropdowns[i].addEventListener("click", hideShow);
-
-// for (let i = 0; i < drop.length; i++)
-//   drop[i].addEventListener("click", hideShow);
+    menuToOpen.classList.toggle("hidden");
+  });
+}
