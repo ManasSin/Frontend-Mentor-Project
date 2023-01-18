@@ -136,6 +136,7 @@ body {
 
 body > * {
   grid-column: 2;
+  place-self: center;
 }
 
 section {
@@ -148,22 +149,25 @@ section {
   grid-template-columns: repeat(12, 1fr);
   place-content: center;
   gap: var(--space-500);
+  max-width: 1700px;
 }
 
 main {
   grid-column: 2/ -1;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   grid-auto-rows: minmax(220px, 1fr);
   justify-content: space-between;
   row-gap: var(--space-500);
   column-gap: var(--space-300);
+  height: 480px;
+  overflow: auto;
 }
 
 .cards {
-  background-color: var(--orange-700);
+  /* background-color: var(--orange-700); */
   border-radius: var(--roundness-radius);
-  padding-top: var(--space-500);
+  padding-top: 13%;
   position: relative;
   overflow: hidden;
 
@@ -207,6 +211,7 @@ aside {
   justify-content: flex-start;
 
   background-color: var(--slate-purple-200);
+  max-height: 480px;
 }
 
 aside > * {
@@ -248,4 +253,73 @@ li {
   list-style-type: none;
   color: inherit;
   text-decoration: none;
+}
+
+@media screen and (max-width: 960px) {
+  body {
+    grid-template-columns: 16px 1fr 16px;
+  }
+
+  body > section {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 220px;
+    justify-items: stretch;
+    /* overflow: auto; */
+  }
+
+  section > * {
+    max-width: 100%;
+  }
+
+  section > aside {
+    grid-column: 1 / -1;
+  }
+
+  section > main {
+    grid-column: 1 / -1;
+
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    grid-auto-rows: 180px;
+  }
+
+  /* inside component */
+
+  aside > .profile {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--space-300);
+    align-items: center;
+  }
+
+  .title-heading-text {
+    font-size: 32px;
+  }
+
+  aside > .profile > img {
+    height: var(--space-700);
+    aspect-ratio: 1/ 1;
+  }
+
+  aside > ul {
+    flex-flow: row;
+    align-items: center;
+  }
+
+  .cards {
+    padding-top: 8%;
+  }
+
+  .card-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-300);
+  }
+}
+
+@media screen and (max-width: 520px) {
+  section > main {
+    grid-template-columns: 1fr;
+  }
 }
