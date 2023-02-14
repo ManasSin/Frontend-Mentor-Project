@@ -221,10 +221,6 @@ nav > ul {
   gap: var(--space-xs);
 }
 
-.menu-group {
-  display: none;
-}
-
 nav > ul > li:hover,
 nav button:hover {
   color: var(--black-800);
@@ -233,15 +229,18 @@ nav button:hover {
 /* ! hero section */
 
 section[aria-label="hero-section"] {
-  display: flex;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-med);
   width: 100%;
-  padding: var(--space-med) var(--space-med);
+  /* padding: var(--space-med) var(--space-med); */
 }
 
-.left-side {
+.left-side,
+section[aria-label="hero-section"] section[aria-label="image-section"] {
   display: flex;
-  width: 50%;
+  height: 80vh;
   flex-flow: column;
   justify-content: space-between;
 }
@@ -257,10 +256,12 @@ section[aria-label="hero-section"] {
 
 .left-side > header > h1 {
   font: var(--heading);
+  font-size: 4.5em;
 }
 
 .left-side > header > p {
   width: 70%;
+  line-height: 22px;
   color: var(--gray-500);
 }
 
@@ -276,11 +277,19 @@ section[aria-label="hero-section"] {
   display: none;
 }
 
-.image-section {
-  width: 50%;
+.image-section > img[src*="desktop.png"] {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 /* 
 .image-section > img {
   width: 100%;
   height: 100%;
+} */
+
+/* ? media query */
+
+/* @media screen and (max-width: 896px) {
+
 } */
