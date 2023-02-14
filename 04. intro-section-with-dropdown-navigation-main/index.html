@@ -33,41 +33,21 @@
           />
         </div>
 
-        <div class="floating-list-features hidden" id="features">
-          <ul>
-            <li>
-              <a href="#">
-                <img src="./images/icon-todo.svg" alt="todo-list" />
-                <p>Todo list</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./images/icon-calendar.svg" alt="calendar" />
-                <p>Calendar</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./images/icon-reminders.svg" alt="reminder icon" />
-                <p>Reminder</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./images/icon-planning.svg" alt="planning icon" />
-                <p>planning</p>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="floating-list-company hidden" id="company">
-          <ul>
-            <li><a href="#">History</a></li>
-            <li><a href="#">Our Team</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
+        <div class="menu-group">
+          <img
+            src="./images/icon-menu.svg"
+            alt="toggle menu bar"
+            class="menu-open"
+            role="menubar"
+            aria-hidden="true"
+          />
+          <img
+            src="./images/icon-close-menu.svg"
+            alt="close menu bar"
+            class="menu-close hidden"
+            role="menubar"
+            aria-hidden="true"
+          />
         </div>
 
         <ul aria-label="nav-list" aria-hidden="false" role="menu">
@@ -86,6 +66,36 @@
               />
             </a>
           </li>
+
+          <div class="floating-list-features hidden" id="features">
+            <ul>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-todo.svg" alt="todo-list" />
+                  <p>Todo list</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-calendar.svg" alt="calendar" />
+                  <p>Calendar</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-reminders.svg" alt="reminder icon" />
+                  <p>Reminder</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-planning.svg" alt="planning icon" />
+                  <p>planning</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+
           <li role="link" class="nav-links company">
             <a href="#">
               Company
@@ -101,26 +111,18 @@
               />
             </a>
           </li>
+
+          <div class="floating-list-company hidden" id="company">
+            <ul>
+              <li><a href="#">History</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
           <li role="link" class="nav-links"><a href="#">Carrers</a></li>
           <li role="link" class="nav-links"><a href="#">About</a></li>
         </ul>
-
-        <div class="menu-group">
-          <img
-            src="./images/icon-menu.svg"
-            alt="toggle menu bar"
-            class="menu-open hidden"
-            role="menubar"
-            aria-hidden="true"
-          />
-          <img
-            src="./images/icon-close-menu.svg"
-            alt="close menu bar"
-            class="menu-close hidden"
-            role="menubar"
-            aria-hidden="true"
-          />
-        </div>
 
         <div aria-label="button-group" class="btn-group">
           <button role="link" class="btn btn-ghost">Login</button>
@@ -132,6 +134,13 @@
 
       <section aria-label="hero-section" class="hero-section">
         <!-- ? main section -->
+        <div class="logo hidden">
+          <img
+            aria-label="Snap-logo"
+            src="./images/logo.svg"
+            alt="logo of this site"
+          />
+        </div>
 
         <div class="left-side">
           <header>
