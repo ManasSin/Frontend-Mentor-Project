@@ -288,8 +288,130 @@ section[aria-label="hero-section"] section[aria-label="image-section"] {
   height: 100%;
 } */
 
+.menu-group,
+.menu-open {
+  display: none;
+}
+
 /* ? media query */
 
-/* @media screen and (max-width: 896px) {
+@media screen and (max-width: 896px) {
+  main {
+    grid-template-columns: 10px 1fr 10px;
+  }
 
-} */
+  div[aria-label="logo"] {
+    display: none;
+  }
+
+  main nav,
+  nav ul,
+  .btn-group {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  main nav {
+    padding: var(--space-med);
+    width: 70vw;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    margin: 0;
+
+    z-index: 2;
+    background-color: #fff;
+
+    /* transform: scale(0);
+    pointer-events: none; */
+  }
+
+  .menu-group,
+  .menu-open {
+    display: block;
+
+    align-self: flex-end;
+  }
+
+  .floating-list-features,
+  .floating-list-company {
+    position: static;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    margin: 0;
+    filter: none;
+  }
+
+  main nav > * {
+    padding: 0;
+  }
+
+  nav > ul {
+    flex: 0 0 auto;
+  }
+
+  .btn-group {
+    align-self: stretch;
+    width: 100%;
+
+    align-items: stretch;
+  }
+
+  .logo {
+    display: block;
+    position: absolute;
+    padding: var(--space-s) var(--space-xxs);
+
+    width: 25%;
+    height: fit-content;
+  }
+
+  .logo > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section[aria-label="hero-section"] > * {
+    grid-column: 1 / -1;
+
+    height: fit-content;
+  }
+
+  section[aria-label="hero-section"] {
+    gap: 0px;
+  }
+
+  .left-side {
+    order: 2;
+  }
+
+  .left-side header {
+    align-items: center;
+    gap: var(--space-xxs);
+  }
+
+  .left-side header > h1,
+  .left-side header > p {
+    width: 100%;
+    text-align: center;
+  }
+
+  section[aria-label="hero-section"] section[aria-label="image-section"] {
+    height: fit-content;
+  }
+
+  .image-section > img[src*="desktop.png"] {
+    display: none;
+  }
+
+  .image-section > img[src*="mobile.png"] {
+    display: block;
+    padding: var(--space-large) 0 var(--space-s);
+  }
+}
