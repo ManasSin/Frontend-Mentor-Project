@@ -1,8 +1,11 @@
-import "./App.css";
 import Register from "./components/Register";
 
-function App() {
-  return <main className="app">Register</main>;
-}
+const App = () => {
+  return (
+    <main className="App">
+      <Register />
+    </main>
+  );
+};
 
 export default App;
