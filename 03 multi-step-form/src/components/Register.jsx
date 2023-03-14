@@ -35,19 +35,12 @@ const Register = () => {
   }, []);
 
   useEffect(() => {
-    const result = USER_REGEX.test(user); // checking the valid username against the regex i created.
-    console.log(result);
-    console.log(user);
-    setValidName(result); //  is result is true then we will set the user input to valid name.
+    setValidName(USER_REGEX.test(user));
   }, [user]);
 
   useEffect(() => {
-    const result = PWD_REGEX.test(pwd);
-    console.log(result);
-    console.log(pwd);
-    setValidPwd(result);
-    const Match = pwd === matchPwd;
-    setValidMatch(Match);
+    setValidPwd(PWD_REGEX.test(pwd));
+    setValidMatch(pwd === matchPwd);
   }, [pwd, matchPwd]);
 
   useEffect(() => {
@@ -62,15 +55,9 @@ const Register = () => {
     // if button was enabled any how
     const v1 = USER_REGEX.test(user);
     const v2 = USER_REGEX.test(pwd);
-    if (v1 || v2) setErrMsg("Invalid Entry");
+    if (!v1 || !v2) setErrMsg("Invalid Entry");
 
     setSuccess(true);
-  };
-
-  const goBack = async (e) => {
-    e.preventDefault();
-
-    setSuccess(false);
   };
 
   return (

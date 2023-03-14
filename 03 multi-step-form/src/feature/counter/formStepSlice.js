@@ -9,10 +9,10 @@ export const formStepSlice = createSlice({
   initialState,
   reducers: {
     increment_Form_Step: (state) => {
-      if (state.value >= 1 && state.value < 5) state.value += 1;
+      if (state.value >= 1 && state.value < 4) state.value += 1;
     },
     decremenet_Form_Step: (state) => {
-      if (state.value > 1 && state.value <= 5) state.value -= 1;
+      if (state.value > 1 && state.value <= 4) state.value -= 1;
     },
   },
 });
